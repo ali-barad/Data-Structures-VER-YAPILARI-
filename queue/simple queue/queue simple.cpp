@@ -27,7 +27,7 @@ void enqueu(int value) {
 		cout << "queue is full ";
 	}
 }
-int dequeue() {
+void  dequeue() {
 
 	
 	if (front != -1 && rear != -1 && front <= rear ) {
@@ -55,7 +55,7 @@ int peek() {
 void display() {
 	if (front != -1 && rear != -1 && front <= rear) {
 
-		for (int = front; i <= rear; i++) {
+		for (int  i = front; i <= rear; i++) {
 			cout << queue[i];
 
 		}
