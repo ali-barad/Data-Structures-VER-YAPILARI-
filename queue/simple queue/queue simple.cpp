@@ -1,5 +1,5 @@
 /*/OGRENCI AD / SOYAD : ALI BARAD
-* KONU : queue(simplequeue) 
+* KONU : queue(simplequeue)
 */
 
 
@@ -16,34 +16,40 @@ int rear = -1;
 
 void enqueu(int value) {
 
-	if (rear != size -1) {
-		
-		rear++; 
-		front++;
+	if (rear != size - 1) {
 
-		queue[rear] = value; 
-	}
-	else {
-		cout << "queue is full ";
+
+		if (front == -1 && rear == -1) {
+
+
+			front++;
+
+			queue[++rear] = value;
+		}
+
+		else {
+			queue[++rear] = value; 
+		}
+
 	}
 }
 void  dequeue() {
 
-	
-	if (front != -1 && rear != -1 && front <= rear ) {
-		front++; 
+
+	if (front != -1 && rear != -1  && front <= rear) {
+		front++;
 	}
 
 	else {
-		cout << " queue is full "; 
+		cout << " queue is full ";
 	}
-	
+
 }
 int peek() {
 
 
 	if (front != -1 && rear != -1 && front <= rear) {
-	
+
 		return queue[front];
 	}
 
@@ -55,8 +61,8 @@ int peek() {
 void display() {
 	if (front != -1 && rear != -1 && front <= rear) {
 
-		for (int  i = front; i <= rear; i++) {
-			cout << queue[i];
+		for (int i = front; i <= rear; i++) {
+			cout << queue[i] << "\n"; 
 
 		}
 	}
@@ -64,20 +70,20 @@ void display() {
 		cout << " queue is empty ";
 	}
 
-	}
+}
 int main() {
-	push(10);
-	push(20);
-	push(30);
-
-	display();
-	cout << endl;
-
-	pop();
+	enqueu(10);
+	enqueu(11);
+	enqueu(12);
 	display();
 
-	cout << endl;
-	cout << "peekTop : " << peek();
+
+	cout << endl; 
+	dequeue(); 
+
+	display(); 
+
+	
 
 
 
